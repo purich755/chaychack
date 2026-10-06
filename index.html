@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЧайЧак stories — дом татарской продукции в Казани</title>
+  <meta name="description" content="Чайная лавка в центре Казани: татарский чай, свежий чак-чак, мёд, сандыки ручной работы с гравировкой, подарки и чайный кейтеринг. Каждого гостя встречаем горячим чаем. Мартына Межлаука, 6.">
+  <meta name="theme-color" content="#1B120D">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="ЧайЧак stories — сначала чай, потом всё остальное">
+  <meta property="og:description" content="Дом татарской продукции в Казани: чай, чак-чак, сандыки с гравировкой, подарки и выездной табын.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" href="assets/svg/tulip.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Commissioner:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=PT+Serif:ital@1&family=Yeseva+One&display=swap&subset=cyrillic,cyrillic-ext,latin">
+
+  <script>
+    // Флаги окружения ставим до отрисовки, чтобы не было вспышки интро и скрытых reveal-элементов.
+    // Только data-атрибуты: Lenis переписывает class у <html>.
+    (function () {
+      var d = document.documentElement;
+      d.setAttribute('data-js', '');
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) d.setAttribute('data-motion', 'reduce');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cc-kapka') === '1'; } catch (e) {}
+      if (reduce || seen) d.setAttribute('data-kapka', 'skip');
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "additionalType": "TeaStore",
+    "name": "ЧайЧак stories",
+    "alternateName": "Дом татарской продукции",
+    "description": "Чайная лавка и дом татарской продукции: чай, чак-чак, мёд, татарские сундуки ручной работы, подарки, чайный кейтеринг.",
+    "image": "assets/img/og.jpg",
+    "telephone": ["+7 950 323-72-89", "+7 962 552-71-98"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Мартына Межлаука, 6",
+      "addressLocality": "Казань",
+      "addressRegion": "Республика Татарстан",
+      "postalCode": "420111",
+      "addressCountry": "RU"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 55.787984, "longitude": 49.110303 },
+    "openingHours": ["Mo-Sa 09:00-19:00", "Su 10:00-18:00"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "paymentAccepted": "Наличные, банковская карта, QR",
+    "sameAs": ["https://t.me/TatarTeaStories", "https://vk.ru/tatarteastories", "https://yandex.ru/maps/org/chaychak_stories/136296826032/"]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Общие SVG-определения: арки-маски (objectBoundingBox — подстраиваются под любой размер), тюльпан, стрелки -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="arch-tall" clipPathUnits="objectBoundingBox"><path d="M0 1V.3C0 .15.3.105.44.042Q.49.018.5 0Q.51.018.56.042C.7.105 1 .15 1 .3V1Z"/></clipPath>
+    <clipPath id="arch-mid" clipPathUnits="objectBoundingBox"><path d="M0 1V.4C0 .2.3.14.44.056Q.49.024.5 0Q.51.024.56.056C.7.14 1 .2 1 .4V1Z"/></clipPath>
+    <clipPath id="arch-wide" clipPathUnits="objectBoundingBox"><path d="M0 1V.5C0 .25.3.175.44.07Q.49.03.5 0Q.51.03.56.07C.7.175 1 .25 1 .5V1Z"/></clipPath>
+    <symbol id="tulip" viewBox="0 0 200 240">
+      <path pathLength="1" d="M100 30C86 52 84 80 100 102C116 80 114 52 100 30Z"/>
+      <path pathLength="1" d="M100 102C76 100 60 80 62 50C76 60 90 76 100 102"/>
+      <path pathLength="1" d="M100 102C124 100 140 80 138 50C124 60 110 76 100 102"/>
+      <path pathLength="1" d="M66 66C62 94 78 112 100 114C122 112 138 94 134 66"/>
+      <path pathLength="1" d="M100 114C100 142 98 172 100 206"/>
+      <path pathLength="1" d="M100 170C84 150 60 148 44 160C62 168 82 174 100 170"/>
+      <path pathLength="1" d="M100 150C116 130 140 128 156 138C138 148 118 154 100 150"/>
+      <path pathLength="1" d="M44 160C30 168 28 186 40 194C50 200 58 190 52 182"/>
+      <path pathLength="1" d="M156 138C172 132 178 114 168 106C160 100 150 108 154 116"/>
+      <path pathLength="1" d="M70 212C88 204 112 204 130 212"/>
+      <path pathLength="1" d="M84 40C80 31 72 27 63 29M116 40C120 31 128 27 137 29"/>
+      <circle cx="100" cy="17" r="3.4" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9.2 8.6c0 3.2 2.6 6.2 6 6.2l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11.2l6 2 2.2 6 3.2-4.1 5 3.9z"/><path d="M9 13.2l12-9.2"/></symbol>
+    <symbol id="i-vk" viewBox="0 0 24 24"><path d="M3 7.5h3c1 4 3 6 5 7v-7h3v4c1.5-.3 3-2 4-4h3c-.6 2.4-2.4 4.6-4.4 5.6 1.4.8 3 2.8 3.4 4.4h-3.2c-.8-1.6-2.2-3-3.8-3.4v3.4h-1C7.6 17.5 4 13.5 3 7.5z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-6.2-6-11a6 6 0 1 1 12 0c0 4.8-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.2 4h3.6l1.8 4.6-2.3 1.4a11 11 0 0 0 5.7 5.7l1.4-2.3 4.6 1.8v3.6a1.2 1.2 0 0 1-1.2 1.2A15.8 15.8 0 0 1 4 5.2 1.2 1.2 0 0 1 5.2 4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+  </defs>
+</svg>
+
+<!-- 0. Интро «Капка»: ворота, показываются раз за сессию -->
+<div class="kapka" aria-hidden="true" data-kapka-root>
+  <div class="kapka__leaf kapka__leaf--l"><span class="kapka__panel"></span></div>
+  <div class="kapka__leaf kapka__leaf--r"><span class="kapka__panel"></span></div>
+  <svg class="kapka__tulip"><use href="#tulip"/></svg>
+</div>
+<button class="skip-intro" type="button" data-kapka-skip>Пропустить вступление</button>
+<a class="skip-link" href="#main">К содержимому</a>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__drop"></span><span class="cursor__label"></span></div>
+
+<header class="hdr" data-hdr>
+  <a class="hdr__logo" href="#top" aria-label="ЧайЧак stories — в начало страницы">
+    <svg class="hdr__tulip" aria-hidden="true"><use href="#tulip"/></svg>
+    <span class="hdr__name">ЧайЧак <i>stories</i></span>
+  </a>
+  <div class="hdr__right">
+    <p class="status status--hdr" data-status data-short><span class="status__dot"></span><span class="status__text">пн–сб 09:00–19:00</span></p>
+    <a class="btn btn--solid btn--sm" href="https://wa.me/79625527198" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. Hero — «Рәхим итегез» -->
+  <section id="top" class="hero dark" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="hero__hello"><span class="tt" lang="tt" data-letters>Рәхим итегез!</span></p>
+        <p class="mono hero__where">Добро пожаловать · Казань · Мартына Межлаука, 6</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line"><span class="hero__li">Сначала — <em>чай</em>.</span></span>
+          <span class="hero__line hero__line--2"><span class="hero__li">Потом — всё остальное.</span></span>
+        </h1>
+        <p class="hero__lead" data-hero-fade>ЧайЧак stories — дом татарской продукции в центре Казани. Каждого, кто заходит, у нас встречают горячим чаем и свежим чак-чаком.</p>
+        <div class="hero__cta" data-hero-fade>
+          <a class="btn btn--solid" href="#adres">Зайти на чай</a>
+          <a class="btn btn--line" href="#sandyk">Собрать подарок</a>
+        </div>
+        <p class="status status--hero" data-status data-hero-fade><span class="status__dot"></span><span class="status__text">Пн–сб 09:00–19:00 · вс 10:00–18:00</span></p>
+      </div>
+
+      <div class="hero__media">
+        <div class="steam steam--hero" aria-hidden="true">
+          <svg viewBox="0 0 120 160"><path d="M30 150C12 120 48 100 30 70S42 22 30 0"/><path d="M62 150C42 116 80 94 62 60S72 22 62 0"/><path d="M92 150C74 124 110 100 92 70S102 26 92 0"/></svg>
+        </div>
+        <div class="arch arch--tall hero__arch" data-cursor="look">
+          <div class="arch__in" data-hero-arch>
+            <picture>
+              <source type="image/webp" srcset="assets/img/shop-hero-720.webp 720w, assets/img/shop-hero-1200.webp 1200w" sizes="(max-width: 767px) 86vw, 34vw">
+              <img src="assets/img/shop-hero-1200.jpg" srcset="assets/img/shop-hero-720.jpg 720w, assets/img/shop-hero-1200.jpg 1200w" sizes="(max-width: 767px) 86vw, 34vw" width="1200" height="1472" alt="Бумажный стаканчик чая в руке у входа в лавку: полки с чаем и сладостями, зелёные сандыки, расписные татарские панно на стенах" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+        </div>
+        <svg class="arch-line hero__line-svg" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 1V.3C0 .15.3.105.44.042Q.49.018.5 0Q.51.018.56.042C.7.105 1 .15 1 .3V1"/></svg>
+        <p class="hand hero__hand" data-hero-fade>листайте — нальём
+          <svg class="hand-arrow" viewBox="0 0 60 70" aria-hidden="true"><path d="M10 4c18 6 30 22 26 52"/><path d="M26 46l10 12 10-13"/></svg>
+        </p>
+      </div>
+    </div>
+    <p class="wrap mono hero__tags" data-hero-fade><span>Чай</span><span>Чак-чак</span><span>Мёд</span><span>Сандыки</span><span>Подарки</span><span>Кейтеринг</span></p>
+  </section>
+
+  <!-- 2. «Три глотка» — pin-сцена: чай → молоко → чак-чак -->
+  <section id="chay" class="sips dark" aria-labelledby="sips-title">
+    <div class="sips__pin" data-sips>
+      <div class="steam steam--bg" aria-hidden="true"><svg viewBox="0 0 120 160"><path d="M30 150C12 120 48 100 30 70S42 22 30 0"/><path d="M92 150C74 124 110 100 92 70S102 26 92 0"/></svg></div>
+      <div class="wrap sips__grid">
+        <div class="sips__copy">
+          <h2 class="mono sips__label" id="sips-title">Три глотка — так начинается визит</h2>
+          <div class="sips__steps">
+            <article class="sips__step" data-step="0">
+              <p class="tt" lang="tt">Чәй</p>
+              <h3 class="sips__h">Чай наливаем каждому, кто зашёл.</h3>
+              <p class="sips__p">Не нужно ничего покупать, чтобы присесть.</p>
+            </article>
+            <article class="sips__step" data-step="1">
+              <p class="mono sips__n">Второй глоток</p>
+              <h3 class="sips__h">По-татарски — с молоком.</h3>
+              <p class="sips__p">Так принято в татарском доме. А какой пить — подскажем.</p>
+            </article>
+            <article class="sips__step" data-step="2">
+              <p class="mono sips__n">Третий глоток</p>
+              <h3 class="sips__h">И к нему — <span class="nb">чак-чак</span>. Свежий.</h3>
+              <p class="sips__p">Попробуйте прежде, чем выбрать.</p>
+            </article>
+          </div>
+          <p class="sips__outro" data-sips-outro>Так у нас начинается каждый визит. Дальше — как пойдёт разговор.</p>
+        </div>
+
+        <div class="sips__stage">
+          <div class="steam steam--glass" aria-hidden="true" data-sips-steam>
+            <svg viewBox="0 0 120 160"><path d="M30 150C12 120 48 100 30 70S42 22 30 0"/><path d="M62 150C42 116 80 94 62 60S72 22 62 0"/><path d="M92 150C74 124 110 100 92 70S102 26 92 0"/></svg>
+          </div>
+          <svg class="glass" viewBox="0 0 240 320" role="img" aria-label="Стеклянный стакан: в него наливают чай, потом молоко">
+            <defs>
+              <clipPath id="glass-in"><path d="M54 42L67 284Q69 298 83 298H157Q171 298 173 284L186 42Z"/></clipPath>
+              <filter id="milk-f" x="-30%" y="-30%" width="160%" height="160%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="7" result="n" data-milk-turb/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+                <feGaussianBlur stdDeviation="3.2"/>
+              </filter>
+              <linearGradient id="glass-depth" x1="0" x2="1">
+                <stop offset="0" stop-color="#000" stop-opacity=".35"/>
+                <stop offset=".25" stop-color="#000" stop-opacity="0"/>
+                <stop offset=".75" stop-color="#000" stop-opacity="0"/>
+                <stop offset="1" stop-color="#000" stop-opacity=".4"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="120" cy="302" rx="74" ry="7" fill="#000" opacity=".45"/>
+            <path d="M54 42L67 284Q69 298 83 298H157Q171 298 173 284L186 42Z" fill="#F7EFE3" opacity=".05"/>
+            <g clip-path="url(#glass-in)">
+              <g data-liquid>
+                <path class="glass__fill" data-tea d="M-60 22Q-30 14 0 22T60 22T120 22T180 22T240 22T300 22T360 22V400H-60Z"/>
+                <path class="glass__surface" d="M-60 22Q-30 14 0 22T60 22T120 22T180 22T240 22T300 22T360 22" />
+              </g>
+              <rect class="glass__stream" data-stream x="128" y="0" width="7" height="300" rx="3.5"/>
+              <g class="glass__milk" data-milk filter="url(#milk-f)">
+                <path d="M84 290C70 250 120 236 104 200S140 160 128 130"/>
+                <path d="M150 292C170 256 118 240 140 206S112 168 132 140"/>
+                <path d="M104 280C120 262 150 266 156 244S132 214 120 230"/>
+                <ellipse cx="128" cy="150" rx="22" ry="10"/>
+              </g>
+              <rect x="40" y="0" width="160" height="320" fill="url(#glass-depth)"/>
+            </g>
+            <path class="glass__edge" d="M54 42L67 284Q69 298 83 298H157Q171 298 173 284L186 42"/>
+            <ellipse class="glass__edge" cx="120" cy="42" rx="66" ry="7"/>
+            <path class="glass__shine" d="M72 66L82 272"/>
+            <path class="glass__shine glass__shine--thin" d="M162 70L154 262"/>
+            <path class="glass__facet" d="M88 52L96 290M120 50V292M152 52L144 290"/>
+          </svg>
+          <div class="sips__plate" data-plate>
+            <div class="sips__plate-rim">
+              <picture>
+                <source type="image/webp" srcset="assets/img/chakchak-plate.webp">
+                <img src="assets/img/chakchak-plate.jpg" width="700" height="700" alt="Тарелка с горкой медового чак-чака, которую протягивают гостю" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
+
+        <ol class="sips__dots mono" aria-hidden="true"><li data-dot>01</li><li data-dot>02</li><li data-dot>03</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. «Чак-чак» — вкладки + физическая горка -->
+  <section id="chakchak" class="chak light" aria-labelledby="chak-title">
+    <svg class="thread thread--a" viewBox="0 0 1200 60" aria-hidden="true" data-thread>
+      <path pathLength="1" d="M0 30H420C470 30 490 12 520 18C548 24 552 44 534 46C520 48 516 34 528 30"/>
+      <path pathLength="1" d="M1200 30H780C730 30 710 12 680 18C652 24 648 44 666 46C680 48 684 34 672 30"/>
+      <path pathLength="1" d="M600 4C591 15 591 28 600 37C609 28 609 15 600 4ZM600 37C587 37 579 28 579 15M600 37C613 37 621 28 621 15M600 37V56M600 48C590 41 578 43 571 50M600 48C610 41 622 43 629 50"/>
+    </svg>
+    <div class="wrap chak__grid">
+      <div class="chak__copy">
+        <p class="tt" lang="tt" data-letters>Тәмле булсын!</p>
+        <h2 class="h2" id="chak-title" data-words>Чак-чак, который всегда свежий</h2>
+        <p class="lead" data-reveal>Классический — на мёду, как в детстве у бабушки. И шоколадный — для тех, кто думает, что знает чак-чак. Дадим попробовать оба.</p>
+        <div class="tabs" role="tablist" aria-label="Какой чак-чак показать" data-reveal>
+          <button class="tabs__btn" role="tab" id="tab-honey" aria-selected="true" aria-controls="chak-panel" data-kind="honey">Классический</button>
+          <button class="tabs__btn" role="tab" id="tab-choco" aria-selected="false" aria-controls="chak-panel" data-kind="choco" tabindex="-1">Шоколадный</button>
+        </div>
+        <div class="chak__photo-wrap">
+          <div class="arch arch--tall chak__arch" id="chak-panel" role="tabpanel" aria-labelledby="tab-honey" data-cursor="look" data-arch-reveal>
+            <div class="arch__in">
+              <picture class="chak__pic is-on" data-kind="honey">
+                <source type="image/webp" srcset="assets/img/chakchak-classic-700.webp 700w, assets/img/chakchak-classic-1000.webp 1000w" sizes="(max-width: 767px) 90vw, 30vw">
+                <img src="assets/img/chakchak-classic-700.jpg" srcset="assets/img/chakchak-classic-700.jpg 700w, assets/img/chakchak-classic-1000.jpg 1000w" sizes="(max-width: 767px) 90vw, 30vw" width="700" height="933" alt="Классический медовый чак-чак в прозрачных коробочках" loading="lazy" decoding="async">
+              </picture>
+              <picture class="chak__pic" data-kind="choco">
+                <source type="image/webp" srcset="assets/img/chakchak-taste-700.webp 700w, assets/img/chakchak-taste-1000.webp 1000w" sizes="(max-width: 767px) 90vw, 30vw">
+                <img src="assets/img/chakchak-taste-700.jpg" srcset="assets/img/chakchak-taste-700.jpg 700w, assets/img/chakchak-taste-1000.jpg 1000w" sizes="(max-width: 767px) 90vw, 30vw" width="700" height="700" alt="Дегустация на прилавке: кусочки классического и шоколадного чак-чака на шпажках" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+          <p class="hand chak__hand">шоколадный — сюрприз даже для казанцев
+            <svg class="hand-arrow hand-arrow--up" viewBox="0 0 70 50" aria-hidden="true"><path d="M64 44C46 40 26 30 14 8"/><path d="M8 20l6-13 12 6"/></svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="chak__play">
+        <div class="chak__stage" data-chak-stage data-cursor="touch">
+          <!-- задняя стенка пиалы — под canvas -->
+          <svg class="bowl bowl--back" viewBox="0 0 600 600" aria-hidden="true">
+            <defs>
+              <radialGradient id="bowl-in" cx=".5" cy=".2" r=".9"><stop offset="0" stop-color="#F7EFE3"/><stop offset=".7" stop-color="#E3D2B8"/><stop offset="1" stop-color="#CDB894"/></radialGradient>
+            </defs>
+            <ellipse cx="300" cy="566" rx="270" ry="16" fill="#24170F" opacity=".14"/>
+            <ellipse cx="300" cy="430" rx="256" ry="28" fill="url(#bowl-in)"/>
+            <ellipse cx="300" cy="430" rx="256" ry="28" fill="none" stroke="#C9A45C" stroke-width="2"/>
+          </svg>
+          <canvas class="chak__canvas" aria-hidden="true"></canvas>
+          <!-- передняя стенка пиалы — над canvas, прячет низ горки -->
+          <svg class="bowl bowl--front" viewBox="0 0 600 600" aria-hidden="true">
+            <defs>
+              <linearGradient id="bowl-out" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7EFE3"/><stop offset="1" stop-color="#E3D2B8"/></linearGradient>
+              <linearGradient id="bowl-shade" x1="0" x2="1"><stop offset="0" stop-color="#24170F" stop-opacity=".18"/><stop offset=".3" stop-color="#24170F" stop-opacity="0"/><stop offset=".8" stop-color="#24170F" stop-opacity="0"/><stop offset="1" stop-color="#24170F" stop-opacity=".22"/></linearGradient>
+            </defs>
+            <path d="M44 430A256 28 0 0 0 556 430C552 498 450 540 300 540S48 498 44 430Z" fill="url(#bowl-out)"/>
+            <path d="M44 430A256 28 0 0 0 556 430C552 498 450 540 300 540S48 498 44 430Z" fill="url(#bowl-shade)"/>
+            <path d="M232 538Q300 546 368 538L374 556Q300 566 226 556Z" fill="#E3D2B8" stroke="#C9A45C" stroke-width="1.5"/>
+            <path d="M44 430A256 28 0 0 0 556 430" fill="none" stroke="#C9A45C" stroke-width="2.5"/>
+            <!-- орнамент-пояс на пиале: тюльпаны золотой нитью -->
+            <g fill="none" stroke="#B27718" stroke-width="1.6" stroke-linecap="round">
+              <path d="M84 478C150 498 230 506 300 506S450 498 516 478"/>
+              <path d="M300 470c-6 6-6 14 0 20 6-6 6-14 0-20zM300 490c-8 0-12-6-12-12m12 12c8 0 12-6 12-12"/>
+              <path d="M200 466c-5 5-5 12 0 17 5-5 5-12 0-17zM400 466c-5 5-5 12 0 17 5-5 5-12 0-17z"/>
+              <path d="M118 458c-4 4-4 10 0 14 4-4 4-10 0-14zM482 458c-4 4-4 10 0 14 4-4 4-10 0-14z"/>
+              <path d="M244 492c-14 4-26 2-34-6M356 492c14 4 26 2 34-6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="chak__controls">
+          <button class="btn btn--line btn--on-light" type="button" data-pour>Насыпать ещё</button>
+          <p class="mono chak__fact">Дегустация — каждому гостю · Халяль · Доставка</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. «Чайная полка» + «Синий чай» -->
+  <section id="polka" class="shelf light" aria-labelledby="shelf-title">
+    <div class="wrap">
+      <header class="shelf__head">
+        <p class="tt" lang="tt" data-letters>Чәй</p>
+        <h2 class="h2" id="shelf-title" data-words>Полка, у которой можно задержаться</h2>
+        <p class="lead" data-reveal>Собственное производство чайной продукции и купажи с фруктами и травами. Не знаете, что выбрать, — расскажем и нальём попробовать.</p>
+      </header>
+
+      <div class="shelf__body">
+        <div class="shelf__rack">
+          <ul class="jars" data-reveal-group>
+            <li class="jar jar--black" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">01</span><span class="mono jar__name">Чёрный</span></span></div>
+              <p class="jar__line">крепкий, тот самый, с молоком</p>
+            </li>
+            <li class="jar jar--green" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">02</span><span class="mono jar__name">Зелёный</span></span></div>
+              <p class="jar__line">светлый и свежий, пьют без молока</p>
+            </li>
+            <li class="jar jar--oolong" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">03</span><span class="mono jar__name">Улун</span></span></div>
+              <p class="jar__line">между зелёным и чёрным — раскрывается не с первой заварки</p>
+            </li>
+            <li class="jar jar--herbal" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">04</span><span class="mono jar__name">Травяной</span></span></div>
+              <p class="jar__line">для вечера и неспешного разговора</p>
+            </li>
+            <li class="jar jar--fruit" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">05</span><span class="mono jar__name">Фруктовый</span></span></div>
+              <p class="jar__line">ягоды и фрукты в заварке — и горячим, и остывшим</p>
+            </li>
+            <li class="jar jar--blue" tabindex="0" data-reveal>
+              <div class="jar__can"><span class="jar__lid"></span><svg class="jar__steam" viewBox="0 0 30 60" aria-hidden="true"><path d="M15 58C5 44 25 34 15 20S20 6 15 0"/></svg>
+                <span class="jar__label"><span class="jar__num">06</span><span class="mono jar__name">Синий</span></span></div>
+              <p class="jar__line">из цветов анчана — и с фокусом, о нём ниже</p>
+            </li>
+          </ul>
+          <div class="shelf__plank" aria-hidden="true"></div>
+        </div>
+
+        <aside class="stakan" data-reveal>
+          <div class="arch arch--mid stakan__arch" data-cursor="look" data-arch-reveal>
+            <div class="arch__in">
+              <picture>
+                <source type="image/webp" srcset="assets/img/tea-stakan.webp">
+                <img src="assets/img/tea-stakan.jpg" width="600" height="800" alt="Чайный стакан крупным планом: на дне уже лежит листовой чай, осталось залить кипятком" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+          <h3 class="stakan__h">«Чайный стакан»</h3>
+          <p>Удобная посуда и ароматный напиток в одном: листовой чай уже на дне. Взять с собой на прогулку по Казани.</p>
+        </aside>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="blue" data-blue>
+        <div class="blue__stage">
+          <svg class="blue__glass" viewBox="0 0 240 320" role="img" aria-label="Стакан синего чая" data-blue-svg>
+            <defs>
+              <clipPath id="blue-in"><path d="M54 42L67 284Q69 298 83 298H157Q171 298 173 284L186 42Z"/></clipPath>
+            </defs>
+            <ellipse cx="120" cy="302" rx="74" ry="7" fill="#000" opacity=".45"/>
+            <g clip-path="url(#blue-in)">
+              <path class="blue__liquid" data-blue-liquid d="M-60 92Q-30 84 0 92T60 92T120 92T180 92T240 92T300 92V400H-60Z"/>
+              <circle class="blue__ripple" data-ripple cx="120" cy="92" r="10"/>
+              <rect x="40" y="0" width="160" height="320" fill="url(#glass-depth)"/>
+            </g>
+            <g class="blue__lemon" data-lemon>
+              <circle cx="0" cy="0" r="26" fill="#F2D35B"/>
+              <circle cx="0" cy="0" r="21" fill="#FBE9A0"/>
+              <g stroke="#F2D35B" stroke-width="2"><path d="M0 0V-20M0 0L17 -10M0 0L17 10M0 0V20M0 0L-17 10M0 0L-17 -10"/></g>
+            </g>
+            <path class="glass__edge" d="M54 42L67 284Q69 298 83 298H157Q171 298 173 284L186 42"/>
+            <ellipse class="glass__edge" cx="120" cy="42" rx="66" ry="7"/>
+            <path class="glass__shine" d="M72 66L82 272"/>
+          </svg>
+        </div>
+        <div class="blue__copy">
+          <p class="mono blue__kicker">Синий чай из Таиланда</p>
+          <h3 class="blue__h">Синий чай. Натуральный, без&nbsp;красителей.</h3>
+          <p class="blue__p">Его цвет дают цветы клитории. А теперь — фокус:</p>
+          <button class="btn btn--solid" type="button" data-lemon-btn aria-pressed="false">Добавить лимон</button>
+          <p class="blue__after" data-blue-after aria-live="polite">Кислота меняет цвет — это настоящая химия, никаких красителей. Попробуйте дома.</p>
+        </div>
+        <div class="arch arch--tall blue__photo" data-cursor="look" data-arch-reveal>
+          <div class="arch__in">
+            <picture>
+              <source type="image/webp" srcset="assets/img/tea-blue-pour.webp">
+              <img src="assets/img/tea-blue-pour.jpg" width="534" height="800" alt="Синий чай льётся из френч-пресса в белую чашку, рядом пачка Blue Tea" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. «Сандык» — бархатный блок, сундук на скролле и примерка гравировки -->
+  <section id="sandyk" class="sandyk" aria-labelledby="sandyk-title">
+    <svg class="thread thread--b" viewBox="0 0 1200 60" aria-hidden="true" data-thread>
+      <path pathLength="1" d="M0 30H1200"/>
+      <path pathLength="1" d="M150 30C144 22 144 14 150 8C156 14 156 22 150 30M300 30C294 22 294 14 300 8C306 14 306 22 300 30M450 30C444 22 444 14 450 8C456 14 456 22 450 30M600 30C592 20 592 10 600 2C608 10 608 20 600 30M750 30C744 22 744 14 750 8C756 14 756 22 750 30M900 30C894 22 894 14 900 8C906 14 906 22 900 30M1050 30C1044 22 1044 14 1050 8C1056 14 1056 22 1050 30"/>
+      <path pathLength="1" d="M150 30C140 38 132 40 126 36M300 30C310 38 318 40 324 36M450 30C440 38 432 40 426 36M600 30C590 40 580 42 572 38M600 30C610 40 620 42 628 38M750 30C760 38 768 40 774 36M900 30C890 38 882 40 876 36M1050 30C1060 38 1068 40 1074 36"/>
+    </svg>
+    <div class="wrap sandyk__head">
+      <p class="mono sandyk__tur"><span class="tt-inline" lang="tt">Түр</span> — почётное место в доме</p>
+      <p class="tt sandyk__quote" lang="tt" data-letters>Сандык элек һәр татар өенең түрендә торган…</p>
+      <p class="sandyk__mean" data-reveal>Сундук издавна стоял на почётном месте в каждом татарском доме.</p>
+      <h2 class="h2" id="sandyk-title" data-words>Сандык ручной работы. С&nbsp;вашей гравировкой.</h2>
+      <p class="lead" data-reveal>Эксклюзивные татарские сундуки разных размеров. Гравируем по индивидуальному эскизу — имя, дата, логотип компании. Внутрь — чай, чак-чак, мёд. Получается подарок, который не выбросят.</p>
+    </div>
+
+    <div class="sandyk__scene" data-sandyk>
+      <div class="wrap sandyk__grid">
+        <div class="sandyk__stage" data-sandyk-stage>
+          <div class="rise" data-rise>
+            <div class="rise__glow" data-rise-glow></div>
+            <div class="rise__ph rise__ph--l arch arch--tall" data-rise-ph data-cursor="look">
+              <div class="arch__in"><picture><source type="image/webp" srcset="assets/img/sunduk-open.webp"><img src="assets/img/sunduk-open.jpg" width="600" height="800" alt="Открытый сандык в золотистой отделке с зелёными ромбами, внутри синий бархат" loading="lazy" decoding="async"></picture></div>
+            </div>
+            <div class="rise__ph rise__ph--c arch arch--tall" data-rise-ph data-cursor="look">
+              <div class="arch__in"><picture><source type="image/webp" srcset="assets/img/sunduk-engrave.webp"><img src="assets/img/sunduk-engrave.jpg" width="600" height="800" alt="Гравировка на внутренней стороне крышки белого сандыка: пожелание счастья, любви и благополучия и дата" loading="lazy" decoding="async"></picture></div>
+            </div>
+            <div class="rise__ph rise__ph--r arch arch--tall" data-rise-ph data-cursor="look">
+              <div class="arch__in"><picture><source type="image/webp" srcset="assets/img/sunduk-filled.webp"><img src="assets/img/sunduk-filled.jpg" width="800" height="1067" alt="Белый сандык с наполнением: пачки чая, мёд, мешочек и вышитый магнит" loading="lazy" decoding="async"></picture></div>
+            </div>
+          </div>
+
+          <div class="chest-scene" aria-hidden="true">
+            <div class="chest" data-chest>
+              <div class="chest__face chest__front">
+                <span class="chest__rhombs"></span>
+                <div class="plank" data-plank>
+                  <svg class="plank__orn plank__orn--l"><use href="#tulip"/></svg>
+                  <span class="plank__text" data-engrave-out>Для Алсу, 2026</span>
+                  <svg class="plank__orn plank__orn--r"><use href="#tulip"/></svg>
+                </div>
+                <img class="chest__corner chest__corner--tl" src="assets/svg/corner.svg" alt="">
+                <img class="chest__corner chest__corner--tr" src="assets/svg/corner.svg" alt="">
+                <img class="chest__corner chest__corner--bl" src="assets/svg/corner.svg" alt="">
+                <img class="chest__corner chest__corner--br" src="assets/svg/corner.svg" alt="">
+                <img class="chest__lock" src="assets/svg/lock.svg" alt="">
+              </div>
+              <div class="chest__face chest__back"></div>
+              <div class="chest__face chest__side chest__left"><span class="chest__rhombs"></span></div>
+              <div class="chest__face chest__side chest__right"><span class="chest__rhombs"></span></div>
+              <div class="chest__face chest__bottom"></div>
+              <div class="chest__face chest__floor" data-chest-floor></div>
+              <div class="chest__lid" data-lid>
+                <div class="lid__top"><span class="chest__rhombs"></span></div>
+                <div class="lid__under"></div>
+                <div class="lid__front"></div>
+                <div class="lid__back"></div>
+                <div class="lid__side lid__left"></div>
+                <div class="lid__side lid__right"></div>
+              </div>
+            </div>
+            <div class="chest__shadow"></div>
+          </div>
+          <p class="visually-hidden">Иллюстрация: татарский сундук в золотистой отделке с зелёными ромбами; на передней планке — ваша гравировка.</p>
+        </div>
+
+        <div class="sandyk__panel">
+          <h3 class="mono sandyk__try">Примерьте гравировку</h3>
+          <label class="field" for="engrave">
+            <span class="field__label">Текст на планке</span>
+            <input class="field__input" id="engrave" type="text" maxlength="24" placeholder="Для Алсу, 2026" autocomplete="off" data-engrave>
+            <span class="field__count mono" data-engrave-count>0 / 24</span>
+          </label>
+          <div class="seg" role="group" aria-label="Орнамент по краям надписи">
+            <button class="seg__btn" type="button" aria-pressed="true" data-orn="tulip">тюльпан</button>
+            <button class="seg__btn" type="button" aria-pressed="false" data-orn="none">без орнамента</button>
+          </div>
+          <a class="btn btn--solid sandyk__wa" href="https://wa.me/79625527198" target="_blank" rel="noopener" data-wa-sandyk>
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Обсудить сандык в WhatsApp</a>
+          <ul class="mono sandyk__facts">
+            <li>Ручная работа</li><li>Разные размеры</li><li>Корпоративные заказы</li>
+          </ul>
+          <p class="hand sandyk__hand">спросите про корпоративные — сделаем с логотипом
+            <svg class="hand-arrow hand-arrow--side" viewBox="0 0 70 40" aria-hidden="true"><path d="M4 30C22 36 44 30 60 10"/><path d="M48 9l13-1-2 13"/></svg>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. «Күчтәнәч» — горизонтальная полка гостинцев -->
+  <section id="kuchtenech" class="kuch light" aria-labelledby="kuch-title">
+    <div class="kuch__pin" data-kuch>
+      <div class="wrap kuch__head">
+        <div class="kuch__titles">
+          <p class="tt" lang="tt" data-letters>Күчтәнәч</p>
+          <h2 class="h2" id="kuch-title" data-words>Гостинец, который везут из&nbsp;Казани</h2>
+          <p class="lead" data-reveal>По-татарски из поездки без <span class="tt-inline" lang="tt">күчтәнәча</span> не возвращаются.</p>
+        </div>
+        <div class="kuch__progress" aria-hidden="true">
+          <span class="mono kuch__count"><b data-kuch-n>01</b> / 09</span>
+          <span class="kuch__bar"><i data-kuch-bar></i></span>
+        </div>
+      </div>
+      <div class="kuch__viewport" data-kuch-viewport>
+        <ol class="kuch__track" data-kuch-track>
+          <li class="gift gift--w440">
+            <div class="arch arch--mid gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/chakchak-classic-700.webp"><img src="assets/img/chakchak-classic-700.jpg" width="700" height="933" alt="Медовый чак-чак в прозрачных коробках на полке лавки" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">01</p><h3 class="gift__h">Чак-чак</h3><p class="gift__p">классический и шоколадный</p>
+          </li>
+          <li class="gift gift--w360">
+            <div class="arch arch--tall gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/tea-herbal.webp"><img src="assets/img/tea-herbal.jpg" width="800" height="600" alt="Коробки травяного чая по-татарски с расписными этикетками на деревянной полке" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">02</p><h3 class="gift__h">Татарский чай и купажи</h3><p class="gift__p">с травами и фруктами</p>
+          </li>
+          <li class="gift gift--w300">
+            <div class="arch arch--tall gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/tea-blue-packs.webp"><img src="assets/img/tea-blue-packs.jpg" width="600" height="704" alt="Три пачки синего чая Blue Tea с долькой лимона на упаковке" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">03</p><h3 class="gift__h">Синий чай</h3><p class="gift__p">натуральный, из Таиланда</p>
+          </li>
+          <li class="gift gift--w360">
+            <div class="arch arch--mid gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/gift-honey.webp"><img src="assets/img/gift-honey.jpg" width="533" height="800" alt="Банки светлого мёда рядом с брикетом чак-чака" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">04</p><h3 class="gift__h">Мёд</h3><p class="gift__p">натуральный, деревенский</p>
+          </li>
+          <li class="gift gift--w440">
+            <div class="arch arch--wide gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/gift-sweets.webp"><img src="assets/img/gift-sweets.jpg" width="600" height="800" alt="Шоколадные треугольники-өчпочмаки с орехами в разрезе на фарфоровой тарелке" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">05</p><h3 class="gift__h">Национальные сладости</h3><p class="gift__p">шоколадный <span class="tt-inline" lang="tt">өчпочмак</span>, финиковые конфеты, щербет</p>
+          </li>
+          <li class="gift gift--w300">
+            <div class="arch arch--tall gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/gift-pryanik.webp"><img src="assets/img/gift-pryanik.jpg" width="800" height="1000" alt="Расписные пряники «Из Татарстана с любовью» с мальчиком и девочкой в национальных костюмах" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">06</p><h3 class="gift__h">Пряники ручной работы</h3><p class="gift__p">расписные, «Из Татарстана с любовью»</p>
+          </li>
+          <li class="gift gift--w360">
+            <div class="arch arch--mid gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/gift-wood.webp"><img src="assets/img/gift-wood.jpg" width="800" height="631" alt="Резная деревянная шкатулка: белый узор на зелёной крышке, красные стенки" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">07</p><h3 class="gift__h">Изделия из дерева</h3><p class="gift__p">резные шкатулки ручной работы</p>
+          </li>
+          <li class="gift gift--w440">
+            <div class="arch arch--tall gift__arch" data-cursor="look"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/gift-set.webp"><img src="assets/img/gift-set.jpg" width="800" height="1067" alt="Подарочный набор в деревянной коробке на резной зелёной подставке: чай, мёд и сладости" loading="lazy" decoding="async"></picture></div></div>
+            <p class="gift__n mono">08</p><h3 class="gift__h">Подарочные наборы и сертификаты</h3><p class="gift__p">соберём под повод и красиво упакуем</p>
+          </li>
+          <li class="gift gift--w300 gift--tag">
+            <div class="tag">
+              <svg class="tag__orn" aria-hidden="true"><use href="#tulip"/></svg>
+              <p class="mono tag__k">Ещё на полке</p>
+              <ul class="tag__list">
+                <li>съедобные букеты — из шоколада, сухофруктов и орехов</li>
+                <li>мыло и свечи ручной работы</li>
+                <li>подарочная упаковка</li>
+              </ul>
+              <a class="tag__link" href="https://wa.me/79625527198" target="_blank" rel="noopener">Спросите в WhatsApp — покажем</a>
+            </div>
+            <p class="gift__n mono">09</p><h3 class="gift__h">Всё, что не уместилось</h3><p class="gift__p">состав и наличие уточните в лавке</p>
+          </li>
+        </ol>
+      </div>
+      <p class="wrap mono kuch__service"><span>Подарочная упаковка</span><span>Сертификаты</span><span>Доставка</span><span>Халяль</span></p>
+    </div>
+  </section>
+
+  <!-- 7. «ЧайЧак stories» — просмотрщик в формате историй (данные в stories.js) -->
+  <section id="stories" class="stories dark" aria-labelledby="stories-title">
+    <div class="stories__bg" aria-hidden="true"><img alt="" data-bg-a><img alt="" data-bg-b></div>
+    <div class="wrap stories__head">
+      <h2 class="h2" id="stories-title" data-words>Наши stories</h2>
+      <p class="lead" data-reveal>Не зря же мы так называемся.</p>
+    </div>
+    <div class="wrap">
+      <div class="rings" role="tablist" aria-label="Темы историй" data-rings></div>
+    </div>
+    <div class="viewer" role="region" aria-roledescription="stories" aria-label="ЧайЧак stories: фото лавки, чая, чак-чака, сандыков, подарков и выездов" data-viewer tabindex="0">
+      <button class="viewer__peek viewer__peek--prev" type="button" data-peek="-1" aria-label="Предыдущая тема"><img alt="" data-peek-img></button>
+      <div class="viewer__cube">
+        <div class="story" data-story data-cursor="nav">
+          <div class="story__bars" data-bars></div>
+          <div class="story__top">
+            <span class="story__ava"><svg aria-hidden="true"><use href="#tulip"/></svg></span>
+            <span class="story__name">ЧайЧак stories</span>
+            <span class="mono story__topic" data-topic></span>
+            <button class="story__pause" type="button" data-pause aria-label="Пауза"><span></span></button>
+          </div>
+          <div class="story__frames"><img class="story__img is-on" alt="" data-img-a><img class="story__img" alt="" data-img-b></div>
+          <p class="story__cap" data-cap aria-live="polite"></p>
+          <button class="story__zone story__zone--prev" type="button" data-zone="-1" aria-label="Предыдущий кадр"></button>
+          <button class="story__zone story__zone--next" type="button" data-zone="1" aria-label="Следующий кадр"></button>
+        </div>
+      </div>
+      <button class="viewer__peek viewer__peek--next" type="button" data-peek="1" aria-label="Следующая тема"><img alt="" data-peek-img></button>
+    </div>
+    <p class="wrap mono stories__hint">← → листать · пробел — пауза · удержание — тоже пауза</p>
+  </section>
+
+  <!-- 8. «Табын» — кейтеринг и печь-блинница -->
+  <section id="tabyn" class="tabyn" aria-labelledby="tabyn-title">
+    <svg class="thread thread--c" viewBox="0 0 1200 60" aria-hidden="true" data-thread>
+      <path pathLength="1" d="M0 30C60 0 120 60 180 30S300 0 360 30S480 60 540 30S660 0 720 30S840 60 900 30S1020 0 1080 30S1170 50 1200 30"/>
+      <path pathLength="1" d="M180 30c8-10 20-10 22 0s-12 12-14 4M540 30c8-10 20-10 22 0s-12 12-14 4M900 30c8-10 20-10 22 0s-12 12-14 4M360 30c-8 10-20 10-22 0s12-12 14-4M720 30c-8 10-20 10-22 0s12-12 14-4M1080 30c-8 10-20 10-22 0s12-12 14-4"/>
+    </svg>
+    <div class="wrap tabyn__head">
+      <p class="tt" lang="tt" data-letters>Табын</p>
+      <h2 class="h2" id="tabyn-title" data-words>Накроем табын — хоть на тысячу гостей</h2>
+      <p class="lead" data-reveal>Чайный кейтеринг и выездная печь-блинница для городских праздников, корпоративов и фестивалей.</p>
+    </div>
+    <div class="wrap tabyn__grid">
+      <div class="tabyn__nums">
+        <div class="num" data-reveal><p class="num__v"><span data-count="600">600</span><span class="num__u">кг</span></p><p class="num__l">гречки с тушёнкой</p></div>
+        <div class="num" data-reveal><p class="num__v"><span data-count="500">500</span><span class="num__u">л</span></p><p class="num__l">чая</p></div>
+        <div class="num" data-reveal><p class="num__v"><span data-count="1400">1 400</span><span class="num__u">+</span></p><p class="num__l">порций блинов</p></div>
+        <p class="tabyn__note" data-reveal>Столько мы приготовили для одного городского праздника.</p>
+      </div>
+      <div class="tabyn__side">
+        <div class="arch arch--tall tabyn__arch" data-arch-reveal data-cursor="look">
+          <div class="arch__in">
+            <video class="tabyn__video" muted loop playsinline preload="none" poster="assets/video/tabyn-oven-poster.jpg" aria-label="Выездная печь: сковороды с румяными лепёшками над живым огнём" data-video>
+              <source src="assets/video/tabyn-oven.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <article class="pitrau" data-reveal>
+          <div class="pitrau__ph arch arch--mid"><div class="arch__in"><picture><source type="image/webp" srcset="assets/img/event-pitrau.webp"><img src="assets/img/event-pitrau.jpg" width="752" height="1264" alt="Огромный латунный самовар на поляне праздника, рядом человек — ростом самовар почти с него" loading="lazy" decoding="async"></picture></div></div>
+          <div>
+            <p class="mono pitrau__k">12.07.2026 · самовар «Гигант»</p>
+            <h3 class="pitrau__h">«Питрау-2026», Заинск</h3>
+            <p>Угощали гостей праздника травяным чаем.</p>
+          </div>
+        </article>
+        <div class="tabyn__cta">
+          <a class="btn btn--solid" href="tel:+79503237289"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Получить коммерческое предложение</a>
+          <a class="btn btn--line" href="https://t.me/teatatartop" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-tg"/></svg>Написать в Telegram</a>
+        </div>
+        <p class="tabyn__small">Корпоративные подарки — тоже к нам.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. «Рәхмәт» — отзывы -->
+  <section id="rahmat" class="rev light" aria-labelledby="rev-title">
+    <div class="wrap rev__grid">
+      <div class="rev__main">
+        <p class="tt" lang="tt" data-letters>Рәхмәт!</p>
+        <h2 class="h2" id="rev-title" data-words>Что говорят, выходя из лавки</h2>
+        <figure class="quote" data-quotes>
+          <blockquote class="quote__stack">
+            <p class="quote__q is-on" data-q>«Приехали с Чебоксар ради <span class="nb">чак-чака</span>. Всё отлично.»<cite>Игорь</cite></p>
+            <p class="quote__q" data-q>«Всех посетителей угощают горячим вкусным татарским чаем.»<cite>Алина</cite></p>
+            <p class="quote__q" data-q>«Купила татарский чай, попала на дегустацию вкусного шоколадного чак-чака!»<cite>Аида</cite></p>
+            <p class="quote__q" data-q>«Приятный персонал, который накормил чак-чаком и напоил очень вкусным чаем!»<cite>Елизавета</cite></p>
+            <p class="quote__q" data-q>«Маленький уютный магазинчик, звучит приятная музыка, богатый ассортимент национальной продукции.»<cite>Надежда</cite></p>
+          </blockquote>
+          <span class="quote__timer" aria-hidden="true"><i data-quote-timer></i></span>
+        </figure>
+      </div>
+      <div class="rev__steam" aria-label="Короткие фразы гостей">
+        <ul class="rev__list" data-marquee>
+          <li><p>«Чак-чак всегда свежий»</p><span>гость, май 2025</span></li>
+          <li><p>«Очень колоритное место! Вкусный чай и чак-чак!»</p><span>Надежда</span></li>
+          <li><p>«Помогли подобрать подарок»</p><span>Эмиль</span></li>
+          <li><p>«Красивые наборы и чаи в ассортименте, чак-чак шоколадный даже есть»</p><span>гость</span></li>
+          <li><p>«Свежий чак-чак, ещё дали попробовать!»</p><span>Варвара</span></li>
+          <li><p>«Звучит приятная музыка»</p><span>Надежда</span></li>
+          <li><p>«Всех посетителей угощают горячим чаем»</p><span>Алина</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. «Как дойти до чая» — контакты и карта -->
+  <section id="adres" class="geo light" aria-labelledby="geo-title">
+    <svg class="thread thread--d" viewBox="0 0 1200 60" aria-hidden="true" data-thread>
+      <path pathLength="1" d="M0 30H470M730 30H1200"/>
+      <path pathLength="1" d="M600 30C570 6 520 8 500 30C520 52 570 54 600 30C630 6 680 8 700 30C680 52 630 54 600 30Z"/>
+      <path pathLength="1" d="M470 30C460 20 446 18 440 24M470 30C460 40 446 42 440 36M730 30C740 20 754 18 760 24M730 30C740 40 754 42 760 36M560 30H640"/>
+    </svg>
+    <div class="wrap geo__grid">
+      <div class="geo__info">
+        <h2 class="h2" id="geo-title" data-words>Заходите. Чай уже заварен.</h2>
+        <p class="geo__addr" data-reveal><b>ул. Мартына Межлаука, 6</b><span>Казань</span></p>
+        <table class="hours mono" data-reveal data-hours>
+          <caption class="visually-hidden">Часы работы</caption>
+          <tbody>
+            <tr data-days="1-6"><th scope="row">Пн–сб</th><td>09:00–19:00</td></tr>
+            <tr data-days="0"><th scope="row">Вс</th><td>10:00–18:00</td></tr>
+          </tbody>
+        </table>
+        <p class="status status--geo" data-status data-reveal><span class="status__dot"></span><span class="status__text">Пн–сб 09:00–19:00 · вс 10:00–18:00</span></p>
+        <p class="geo__phones" data-reveal>
+          <a href="tel:+79503237289">+7 950 323-72-89</a><span class="mono">консультации и кейтеринг</span>
+          <a href="tel:+79625527198">+7 962 552-71-98</a><span class="mono">WhatsApp</span>
+        </p>
+        <div class="geo__links" data-reveal>
+          <a class="icon-btn" href="https://wa.me/79625527198" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+          <a class="icon-btn" href="https://t.me/TatarTeaStories" target="_blank" rel="noopener" aria-label="Telegram-канал TatarTeaStories"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
+          <a class="icon-btn" href="https://vk.ru/tatarteastories" target="_blank" rel="noopener" aria-label="Сообщество ВКонтакте"><svg aria-hidden="true"><use href="#i-vk"/></svg></a>
+          <a class="btn btn--line btn--on-light" href="https://yandex.ru/maps/org/chaychak_stories/136296826032/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Открыть в Яндекс.Картах</a>
+        </div>
+        <ul class="chips" data-reveal>
+          <li>Wi-Fi</li><li>парковка</li><li>карта и QR</li><li>доставка</li><li>халяль</li><li>можно с питомцем</li>
+        </ul>
+      </div>
+      <div class="geo__map" data-reveal>
+        <div class="map arch arch--mid">
+          <iframe class="map__frame" title="Яндекс.Карта: ЧайЧак stories, Мартына Межлаука, 6" src="https://yandex.ru/map-widget/v1/?oid=136296826032&amp;ll=49.110303%2C55.787984&amp;z=17" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <svg class="arch-line geo__line" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 1V.4C0 .2.3.14.44.056Q.49.024.5 0Q.51.024.56.056C.7.14 1 .2 1 .4V1Z"/></svg>
+        <p class="map__here mono"><span class="status__dot"></span>Мы здесь</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Финал «Сау булыгыз!» -->
+  <section id="sau" class="fin dark" aria-labelledby="fin-title">
+    <div class="steam steam--fin" aria-hidden="true"><svg viewBox="0 0 120 160"><path d="M30 150C12 120 48 100 30 70S42 22 30 0"/><path d="M62 150C42 116 80 94 62 60S72 22 62 0"/><path d="M92 150C74 124 110 100 92 70S102 26 92 0"/></svg></div>
+    <svg class="fin__tulip" aria-hidden="true" data-fin-tulip><use href="#tulip"/></svg>
+    <div class="wrap fin__in">
+      <h2 class="fin__tt" id="fin-title"><span class="tt" lang="tt" data-letters>Сау булыгыз!</span></h2>
+      <p class="fin__sub" data-reveal>Будем ждать вас на чай.</p>
+      <div class="fin__cta" data-reveal>
+        <a class="btn btn--solid" href="https://wa.me/79625527198" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+        <a class="btn btn--line" href="https://yandex.ru/maps/?rtext=~55.787984%2C49.110303&amp;rtt=auto" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Построить маршрут</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot dark">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <p class="foot__name">ЧайЧак <i>stories</i></p>
+      <p class="mono foot__sub">Дом татарской продукции</p>
+    </div>
+    <nav class="foot__nav" aria-label="Разделы страницы">
+      <a href="#chay">Чай</a><a href="#chakchak">Чак-чак</a><a href="#polka">Полка</a><a href="#sandyk">Сандык</a><a href="#kuchtenech">Подарки</a><a href="#stories">Stories</a><a href="#tabyn">Табын</a><a href="#rahmat">Отзывы</a><a href="#adres">Адрес</a>
+    </nav>
+    <div class="foot__col">
+      <p>ул. Мартына Межлаука, 6, Казань, Республика Татарстан, 420111</p>
+      <p class="mono">Пн–сб 09:00–19:00 · вс 10:00–18:00</p>
+    </div>
+    <div class="foot__col">
+      <p><a href="tel:+79503237289">+7 950 323-72-89</a><br><a href="tel:+79625527198">+7 962 552-71-98</a></p>
+      <p class="foot__soc">
+        <a href="https://wa.me/79625527198" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://t.me/TatarTeaStories" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/teatatartop" target="_blank" rel="noopener">Заказы в Telegram</a>
+        <a href="https://vk.ru/tatarteastories" target="_blank" rel="noopener">VK</a>
+      </p>
+    </div>
+  </div>
+  <div class="wrap foot__bottom mono">
+    <span>© 2026 ЧайЧак stories</span>
+    <span>Демо-версия сайта</span>
+  </div>
+</footer>
+
+<!-- Чайный док: навигация снизу (на мобильном — звонок, WhatsApp и меню) -->
+<nav class="dock" aria-label="Навигация по разделам" data-dock>
+  <ul class="dock__list">
+    <li><a href="#chay" data-dock-link>Чай</a></li>
+    <li><a href="#chakchak" data-dock-link>Чак-чак</a></li>
+    <li><a href="#sandyk" data-dock-link>Сандык</a></li>
+    <li><a href="#kuchtenech" data-dock-link>Подарки</a></li>
+    <li><a href="#stories" data-dock-link>Stories</a></li>
+    <li><a href="#tabyn" data-dock-link>Табын</a></li>
+    <li><a href="#adres" data-dock-link>Адрес</a></li>
+  </ul>
+  <div class="dock__mob">
+    <a class="dock__act" href="tel:+79503237289"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+    <a class="dock__act" href="https://wa.me/79625527198" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+    <button class="dock__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню" data-menu-btn><span></span><span></span></button>
+  </div>
+</nav>
+<div class="menu" id="menu" hidden data-lenis-prevent data-menu>
+  <ul class="menu__list">
+    <li><a href="#chay"><span>Чай</span><i lang="tt">Чәй</i></a></li>
+    <li><a href="#chakchak"><span>Чак-чак</span><i lang="tt">Тәмле булсын!</i></a></li>
+    <li><a href="#polka"><span>Чайная полка</span><i lang="tt">Чәй</i></a></li>
+    <li><a href="#sandyk"><span>Сандык</span><i lang="tt">Түр</i></a></li>
+    <li><a href="#kuchtenech"><span>Подарки</span><i lang="tt">Күчтәнәч</i></a></li>
+    <li><a href="#stories"><span>Stories</span><i>истории</i></a></li>
+    <li><a href="#tabyn"><span>Кейтеринг</span><i lang="tt">Табын</i></a></li>
+    <li><a href="#rahmat"><span>Отзывы</span><i lang="tt">Рәхмәт!</i></a></li>
+    <li><a href="#adres"><span>Адрес</span><i lang="tt">Рәхим итегез!</i></a></li>
+  </ul>
+  <p class="mono menu__foot">Мартына Межлаука, 6 · пн–сб 09:00–19:00 · вс 10:00–18:00</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/scenes.js" defer></script>
+<script src="assets/js/chakchak.js" defer></script>
+<script src="assets/js/stories.js" defer></script>
+</body>
+</html>

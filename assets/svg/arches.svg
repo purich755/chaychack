@@ -1,0 +1,9 @@
+<!-- Килевидные арки — маски фото. В index.html они продублированы инлайн как <clipPath clipPathUnits="objectBoundingBox">,
+     потому что CSS mask-image с внешнего файла не работает при открытии сайта через file://. Этот файл — эталон форм. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 1.4">
+  <g fill="#C9A45C">
+    <path id="arch-tall" transform="scale(.75 1.4)" d="M0 1V.3C0 .15.3.105.44.042Q.49.018.5 0Q.51.018.56.042C.7.105 1 .15 1 .3V1Z"/>
+    <path id="arch-mid" transform="translate(1 0) scale(.9 1)" d="M0 1V.4C0 .2.3.14.44.056Q.49.024.5 0Q.51.024.56.056C.7.14 1 .2 1 .4V1Z"/>
+    <path id="arch-wide" transform="translate(2 .4) scale(1 .6)" d="M0 1V.5C0 .25.3.175.44.07Q.49.03.5 0Q.51.03.56.07C.7.175 1 .25 1 .5V1Z"/>
+  </g>
+</svg>
